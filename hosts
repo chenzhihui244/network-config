@@ -1,0 +1,11 @@
+[all:vars]
+iface=enp2s0
+policy=static
+#policy=dhcp
+ipaddr=192.168.10.21
+prefix=24
+gateway=192.168.10.10
+dns=8.8.8.8
+
+[host]
+192.168.10.20

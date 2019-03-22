@@ -1,0 +1,10 @@
+NAME="{{ iface }}"
+DEVICE="{{ iface }}"
+ONBOOT=yes
+BOOTPROTO=static
+DEFROUTE="yes"
+TYPE=Ethernet
+IPADDR={{ ipaddr }}
+PREFIX={{ prefix }}
+GATEWAY={{ gateway }}
+DNS1={{ dns }}
