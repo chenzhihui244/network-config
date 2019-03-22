@@ -19,3 +19,9 @@
         notify:
             - restart network
         when: (policy == "dhcp")
+
+  handlers:
+    - name: restart network
+      service:
+        state: restarted
+        name: network
