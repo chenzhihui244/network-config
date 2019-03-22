@@ -4,21 +4,12 @@
   remote_user: root
 
   tasks:
-      - name: deploy static config
+      - name: deploy network config
         template:
-            src: ifcfg-static
+            src: ifcfg-{{ policy }}
             dest: /etc/sysconfig/network-scripts/ifcfg-{{ iface }}
         notify:
             - restart network
-        when: (policy == "static")
-
-      - name: deploy dhcp config
-        template:
-            src: ifcfg-dhcp
-            dest: /etc/sysconfig/network-scripts/ifcfg-{{ iface }}
-        notify:
-            - restart network
-        when: (policy == "dhcp")
 
   handlers:
     - name: restart network
